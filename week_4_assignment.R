@@ -5,7 +5,7 @@ filtered_surveys <- filter(surveys, weight >= 30 & weight <= 60)
 print(head(filtered_surveys, 6))
 biggest_critters <- surveys %>% 
   filter(!is.na(weight)) %>% 
-  group_by(species, sex) %>% 
+  group_by(species_id, sex) %>% 
   summarise(max_weight = max(weight))
 surveys %>%
   filter(is.na(weight)) %>% #keeps only rows with NA
